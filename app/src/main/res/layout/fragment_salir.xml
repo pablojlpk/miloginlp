@@ -13,6 +13,7 @@
         android:layout_marginTop="308dp"
         android:layout_marginBottom="375dp"
         android:text="Salir"
+        android:onClick="mostrarDialogo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

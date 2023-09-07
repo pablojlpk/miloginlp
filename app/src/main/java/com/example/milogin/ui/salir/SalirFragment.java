@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.milogin.Dialogos;
 import com.example.milogin.R;
 import com.example.milogin.databinding.FragmentSalirBinding;
 
@@ -35,13 +36,21 @@ public class SalirFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         mViewModel = new ViewModelProvider(this).get(SalirViewModel.class);
 
-        binding.btSalir.setOnClickListener(new View.OnClickListener() {
+
+        /*binding.btSalir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.exit(0);
+
+                //Dialogos.mostrarDialogo();
+
+
+                // System.exit(0);
+
 
             }
         });
+
+         */
 
     }
 

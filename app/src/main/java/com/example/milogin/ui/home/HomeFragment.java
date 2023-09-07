@@ -1,5 +1,6 @@
 package com.example.milogin.ui.home;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import com.example.milogin.databinding.FragmentHomeBinding;
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
+    private Context context;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -28,7 +30,7 @@ public class HomeFragment extends Fragment {
         binding.btLlamar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                homeViewModel.llamaraNumero(123);
+                homeViewModel.llamaraNumero(123, context);
             }
         });
 

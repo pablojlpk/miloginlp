@@ -18,7 +18,8 @@ import android.Manifest;
 
 public class MainActivityViewModel extends AndroidViewModel {
     private Context context;
-    private MutableLiveData<Usuario> usu;
+    private MutableLiveData<String> mutableIngreso;
+
 
 
     public MainActivityViewModel(@NonNull Application application) {
@@ -27,29 +28,30 @@ public class MainActivityViewModel extends AndroidViewModel {
 
     }
 
-    public LiveData<Usuario> getUsuarioIngresado() {
-        if (usu == null) {
-            usu = new MutableLiveData<>();
+    public LiveData<String> getMutableIngreso() {
+        if (mutableIngreso== null) {
+            mutableIngreso = new MutableLiveData<>();
             ;
         }
-        return usu;
+        return mutableIngreso;
     }
 
-    public void inicializarUsuario() {
-        Usuario usuarioharc = new Usuario("Pablo", "1234");
-    }
+    private Usuario usuariohard=new Usuario("admin","admin");
 
     public void solicitarPermiso(){
 
     }
     public void validarUsuario(String n, String p) {
-        if (n.length() == 0 && p.length() == 0) {
-            Toast.makeText(context, "falta ingresar el usuario y/o la contraseña", Toast.LENGTH_LONG).show();
-        } else {
+        String cartel;
+        if (usuariohard.getNomusu().equals(n) && usuariohard.getClave().equals(p)) {
             Intent intent = new Intent(context, MainActivitymenu.class);
             intent.addFlags(intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
-
+            cartel="";
+        } else {
+            cartel="USUARIO Y/O CONTRASEÑA INCORRECTA; REINTENTE";
         }
+
+        mutableIngreso.setValue(cartel);
     }
 }

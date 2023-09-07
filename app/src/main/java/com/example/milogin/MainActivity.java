@@ -9,12 +9,12 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.Manifest;
-
 import com.example.milogin.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
     private MainActivityViewModel mv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,15 +23,15 @@ public class MainActivity extends AppCompatActivity {
         ActivityMainBinding binding= ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         mv= ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(MainActivityViewModel.class);
-
-
-        /*mv.getUsuarioIngresado().observe(this, new Observer<Usuario>() {
+        mv.getMutableIngreso().observe(this, new Observer<String>() {
             @Override
-            public void onChanged(Usuario usuario) {
-                binding.ednomusu.setText(StringBuilder.);
+            public void onChanged(String s) {
+                binding.tvingreso.setText(s.toString());
             }
         });
-*/
+
+
+
         binding.btAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
