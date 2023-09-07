@@ -16,6 +16,7 @@ public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
 
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         HomeViewModel homeViewModel =
@@ -24,7 +25,15 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
+        binding.btLlamar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                homeViewModel.llamaraNumero(123);
+            }
+        });
+
+
+        TextView textView = binding.edNumero;
         homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
