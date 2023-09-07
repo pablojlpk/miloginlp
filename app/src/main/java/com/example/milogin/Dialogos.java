@@ -23,11 +23,12 @@ public class Dialogos  {
     public static void mostrarDialogo(Activity activity){
 
         new AlertDialog.Builder(activity)
-                .setTitle("Bye Bye")
-                .setMessage("Cerrar la aplicación ?")
+                .setTitle("Mi programa de llamadas")
+                .setMessage("Desea Finmalizar la Apliación ?")
                 .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(activity, "Cerrando Sesión", Toast.LENGTH_LONG).show();
                         activity.finish();
 
                     }
@@ -35,7 +36,7 @@ public class Dialogos  {
                 .setNegativeButton("No", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(activity, "Continuamos trabajando", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(activity, "Proceso Cancelado", Toast.LENGTH_SHORT).show();
                     }
                 }).show();
     }

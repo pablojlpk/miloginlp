@@ -10,12 +10,7 @@
         android:id="@+id/btSalir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="308dp"
-        android:layout_marginBottom="375dp"
-        android:text="Salir"
-        android:onClick="mostrarDialogo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Button"
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="324dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
