@@ -17,6 +17,7 @@ public class GalleryViewModel extends AndroidViewModel {
 
     private MutableLiveData<String> mText;
 private Context context;
+
     public GalleryViewModel(@NotNull Application application) {
         super(application);;
         mText = new MutableLiveData<>();
