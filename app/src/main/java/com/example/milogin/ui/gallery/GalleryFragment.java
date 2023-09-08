@@ -29,14 +29,9 @@ public class GalleryFragment extends Fragment {
         binding = FragmentGalleryBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         v=inflater.inflate(R.layout.fragment_gallery,container,false);
-        boton = v.findViewById(R.id.btSalir);
-        boton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getContext(), "hola", Toast.LENGTH_SHORT).show();
-                galleryViewModel.llamaraNumero(123);
-            }
-        });
+
+
+
 
 //        final TextView textView = binding.textGallery;
   //      galleryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);

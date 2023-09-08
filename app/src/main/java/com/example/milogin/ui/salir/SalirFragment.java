@@ -25,7 +25,6 @@ public class SalirFragment extends Fragment {
 
     private SalirViewModel mViewModel;
     private FragmentSalirBinding binding;
-    private Context context;
     Button boton;
     View vista;
 
@@ -36,8 +35,10 @@ public class SalirFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
+
 ////
         vista=inflater.inflate(R.layout.fragment_salir, container, false);
+        Dialogos.mostrarDialogo(getActivity());
         boton=(Button) vista.findViewById(R.id.btSalir);
 
         boton.setOnClickListener(new View.OnClickListener() {

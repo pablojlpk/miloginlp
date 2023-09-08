@@ -29,7 +29,9 @@ public class Dialogos  {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Toast.makeText(activity, "Cerrando Sesión", Toast.LENGTH_LONG).show();
-                        activity.finish();
+                        //activity.finish();
+                        System.exit(0);
+
 
                     }
                 })
