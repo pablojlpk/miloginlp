@@ -39,10 +39,7 @@ context.startActivity(intent);
 //            intent.addFlags(intent.FLAG_ACTIVITY_NEW_TASK);
 //            context.startActivity(intent);
 //            cartel=""
-
-
     }
-
     /*
     public void llamaraNumero(int numerotel) {
         Toast.makeText(context, "llamando a " + numerotel, Toast.LENGTH_SHORT).show();
