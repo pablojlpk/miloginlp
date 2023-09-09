@@ -9,32 +9,41 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 
 import com.example.milogin.R;
 import com.example.milogin.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
-
     private FragmentHomeBinding binding;
     private Context context;
     private Button btllamar;
     private HomeViewModel vm;
     private View vista;
-
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         //HomeViewModel vm=null;
         vista=inflater.inflate(R.layout.fragment_home,container,false);
         btllamar = (Button) vista.findViewById(R.id.btllamar);
+  /*
+        vm.getText().observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+               binding.tvcartel.setText("");
+            }
+        });
+*/
         btllamar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-           //  startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:123")));
+
+                //  startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:123")));
                 vm.llamar("123",context);
+
             }
         });
         return vista;
