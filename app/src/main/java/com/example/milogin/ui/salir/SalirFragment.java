@@ -39,14 +39,7 @@ public class SalirFragment extends Fragment {
 ////
         vista=inflater.inflate(R.layout.fragment_salir, container, false);
         Dialogos.mostrarDialogo(getActivity());
-        boton=(Button) vista.findViewById(R.id.btSalir);
 
-        boton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Dialogos.mostrarDialogo(getActivity());
-            }
-        });
 
         return vista;
 

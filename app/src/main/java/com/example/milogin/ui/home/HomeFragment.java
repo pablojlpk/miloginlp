@@ -24,6 +24,10 @@ public class HomeFragment extends Fragment {
     private Button btllamar;
     private HomeViewModel vm;
     private View vista;
+
+
+
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         //HomeViewModel vm=null;
@@ -37,12 +41,21 @@ public class HomeFragment extends Fragment {
             }
         });
 */
+
         btllamar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                //  startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:123")));
-                vm.llamar("123",context);
+                //
+                  //startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:123")));
+
+                //Intent i = (new Intent(Intent.ACTION_CALL), Uri.parse("tel:123"));
+               // Intent i = (new Intent(Intent.ACTION_CALL, Uri.parse("tel:123")));
+              //i.addFlags(i.FLAG_ACTIVITY_NEW_TASK);
+              //  startActivity(i);
+
+
+
 
             }
         });
