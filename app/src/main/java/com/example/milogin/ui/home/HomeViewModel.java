@@ -33,7 +33,7 @@ public class HomeViewModel extends AndroidViewModel {
             if (nrotel.length()==0){
                 mText.setValue("DEBE INGRESAR UN NUMERO");
             } else {
-                Intent i = (new Intent(Intent.ACTION_CALL, Uri.parse("tel:123" + nrotel)));
+                Intent i = (new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + nrotel)));
                 i.addFlags(i.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(i);
                 mText.setValue("");
