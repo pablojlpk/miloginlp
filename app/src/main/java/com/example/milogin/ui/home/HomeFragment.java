@@ -32,7 +32,7 @@ public class HomeFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-
+        //HomeViewModel vm=null;
         HomeViewModel homeViewModel =
                 new ViewModelProvider(this).get(HomeViewModel.class);
 
@@ -41,18 +41,11 @@ public class HomeFragment extends Fragment {
 
         final TextView textView = binding.tvcartel;
         homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-        binding.btllamar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-homeViewModel.llamar("123",v.getContext());
-            }
-        });
 
-return root;
 
         //------------------
-//        vista=inflater.inflate(R.layout.fragment_home,container,false);
-//        btllamar = (Button) vista.findViewById(R.id.btllamar);
+        vista=inflater.inflate(R.layout.fragment_home,container,false);
+        btllamar = (Button) vista.findViewById(R.id.btllamar);
   /*
         vm.getText().observe(this, new Observer<String>() {
             @Override
@@ -62,9 +55,9 @@ return root;
         });
 */
 
-  //      btllamar.setOnClickListener(new View.OnClickListener() {
-  //          @Override
-        //public void onClick(View v) {
+        btllamar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
                 //
                   //startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:123")));
@@ -77,9 +70,9 @@ return root;
 
 
 
-  //          }
+            }
         });
-//        return vista;
+        return vista;
 
         /* esto es lo que estaba hasta return root
         HomeViewModel homeViewModel =
