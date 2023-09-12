@@ -59,17 +59,11 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                //
-                  //startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:123")));
-
-                //Intent i = (new Intent(Intent.ACTION_CALL), Uri.parse("tel:123"));
-               // Intent i = (new Intent(Intent.ACTION_CALL, Uri.parse("tel:123")));
-              //i.addFlags(i.FLAG_ACTIVITY_NEW_TASK);
-              //  startActivity(i);
+                Integer nt= Integer.parseInt(binding.edNumero.getText().toString());
+                Log.d("boton","entró: ");
 
 
-
-
+                homeViewModel.llamar(nt,v.getContext());
             }
         });
         return vista;

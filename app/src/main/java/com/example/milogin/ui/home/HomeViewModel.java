@@ -27,10 +27,10 @@ public class HomeViewModel extends AndroidViewModel {
     }
 
 
-        public void llamar(String nrotel,Context context) {
+        public void llamar(Integer nrotel,Context context) {
 //        context.startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:123")));
 
-            if (nrotel.length()==0){
+            if (nrotel<0){
                 mText.setValue("DEBE INGRESAR UN NUMERO");
             } else {
                 Intent i = (new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + nrotel)));
