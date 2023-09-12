@@ -9,11 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.milogin.R;
 import com.example.milogin.databinding.FragmentHomeBinding;
@@ -30,9 +32,27 @@ public class HomeFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        //HomeViewModel vm=null;
-        vista=inflater.inflate(R.layout.fragment_home,container,false);
-        btllamar = (Button) vista.findViewById(R.id.btllamar);
+
+        HomeViewModel homeViewModel =
+                new ViewModelProvider(this).get(HomeViewModel.class);
+
+        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
+
+        final TextView textView = binding.tvcartel;
+        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        binding.btllamar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+homeViewModel.llamar("123",v.getContext());
+            }
+        });
+
+return root;
+
+        //------------------
+//        vista=inflater.inflate(R.layout.fragment_home,container,false);
+//        btllamar = (Button) vista.findViewById(R.id.btllamar);
   /*
         vm.getText().observe(this, new Observer<String>() {
             @Override
@@ -42,9 +62,9 @@ public class HomeFragment extends Fragment {
         });
 */
 
-        btllamar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+  //      btllamar.setOnClickListener(new View.OnClickListener() {
+  //          @Override
+        //public void onClick(View v) {
 
                 //
                   //startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:123")));
@@ -57,9 +77,9 @@ public class HomeFragment extends Fragment {
 
 
 
-            }
+  //          }
         });
-        return vista;
+//        return vista;
 
         /* esto es lo que estaba hasta return root
         HomeViewModel homeViewModel =
