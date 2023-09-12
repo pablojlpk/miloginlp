@@ -27,15 +27,19 @@ public class HomeViewModel extends AndroidViewModel {
     }
 
 
-        public void llamar(Integer nrotel,Context context) {
+        public void llamar(String nrotel,Context context) {
 //        context.startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:123")));
 
-            if (nrotel<0){
+            if (nrotel.length()==0){
                 mText.setValue("DEBE INGRESAR UN NUMERO");
             } else {
-                Intent i = (new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + nrotel)));
-                i.addFlags(i.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(i);
+                Intent in= new Intent(Intent.ACTION_CALL);
+                in.setData(Uri.parse(("tel:"+nrotel)));
+                in.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(in);
+
+
+
                 mText.setValue("");
             }
         }

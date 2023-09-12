@@ -54,53 +54,14 @@ public class HomeFragment extends Fragment {
             }
         });
 */
+binding.btllamar.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        homeViewModel.llamar((binding.edNumero.getText().toString()),v.getContext());
+    }
+});
 
-        btllamar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Integer nt= Integer.parseInt(binding.edNumero.getText().toString());
-                Log.d("boton","entró: ");
-
-
-                homeViewModel.llamar(nt,v.getContext());
-            }
-        });
-        return vista;
-
-        /* esto es lo que estaba hasta return root
-        HomeViewModel homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
-
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
-        TextView textView = binding.edNumero;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
-
-*/
-
-
-
-/*
-        vista=inflater.inflate(R.layout.fragment_home, container, false);
-
-
-
-        boton = (Button)  vista.findViewById(R.id.btLlamar);
-        boton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, "hola", Toast.LENGTH_SHORT).show();
-                //galleryViewModel.llamaraNumero(123);
-            }
-        });
-
-
-
-
-        return vista;
-*/
 
     }
 
