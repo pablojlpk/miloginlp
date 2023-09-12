@@ -43,7 +43,7 @@ public class HomeFragment extends Fragment {
         homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
 
-        //------------------
+        //-------------------
         vista=inflater.inflate(R.layout.fragment_home,container,false);
         btllamar = (Button) vista.findViewById(R.id.btllamar);
   /*
