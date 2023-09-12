@@ -23,17 +23,16 @@ import com.example.milogin.databinding.FragmentHomeBinding;
 public class HomeFragment extends Fragment {
     private FragmentHomeBinding binding;
     private Context context;
-    private Button btllamar;
+   // private Button btllamar;
     private HomeViewModel vm;
-    private View vista;
+//    private View vista;
 
 
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        //HomeViewModel vm=null;
-        HomeViewModel homeViewModel =
+          HomeViewModel homeViewModel =
                 new ViewModelProvider(this).get(HomeViewModel.class);
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
@@ -42,18 +41,9 @@ public class HomeFragment extends Fragment {
         final TextView textView = binding.tvcartel;
         homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
+   //     vista=inflater.inflate(R.layout.fragment_home,container,false);
+    //    btllamar = (Button) vista.findViewById(R.id.btllamar);
 
-        //-------------------
-        vista=inflater.inflate(R.layout.fragment_home,container,false);
-        btllamar = (Button) vista.findViewById(R.id.btllamar);
-  /*
-        vm.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(String s) {
-               binding.tvcartel.setText("");
-            }
-        });
-*/
 binding.btllamar.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {

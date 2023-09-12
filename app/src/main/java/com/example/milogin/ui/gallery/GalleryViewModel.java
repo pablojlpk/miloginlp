@@ -32,14 +32,6 @@ private Context context;
         return mText;
     }
 
-    public void llamaraNumero(int numerotel) {
-        Intent intent = new Intent(Intent.ACTION_CALL);
-        intent.setData(Uri.parse("tel:" + numerotel));
-        Toast.makeText(context, "llamando a "+numerotel, Toast.LENGTH_SHORT).show();
-        if (intent.resolveActivity(getApplication().getPackageManager()) != null) {
-            context.startActivity(intent);
 
-        }
-    }
 
 }

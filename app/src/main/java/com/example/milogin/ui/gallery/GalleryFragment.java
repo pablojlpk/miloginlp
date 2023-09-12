@@ -31,17 +31,6 @@ public class GalleryFragment extends Fragment {
         View root = binding.getRoot();
         v=inflater.inflate(R.layout.fragment_gallery,container,false);
 
-
-
-
-//        final TextView textView = binding.textGallery;
-  //      galleryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-
-//        vista=inflater.inflate(R.layout.fragment_salir, container, false);
-  //      boton=(Button) vista.findViewById(R.id.btSalir);
-
-
-
         return root;
     }
 

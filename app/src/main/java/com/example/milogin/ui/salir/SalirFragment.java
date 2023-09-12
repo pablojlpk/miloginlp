@@ -25,7 +25,7 @@ public class SalirFragment extends Fragment {
 
     private SalirViewModel mViewModel;
     private FragmentSalirBinding binding;
-    Button boton;
+
     View vista;
 
 
